@@ -9,10 +9,10 @@
       src="https://kit.fontawesome.com/c9ca8b3d24.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
     <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+    <script src="index.js"></script>
 <script type="text/javascript">
    (function(){
       emailjs.init("uAPy9xI5FIduex09c");
@@ -27,30 +27,31 @@
         </figure>
         <ul class="nav__link--list">
           <li class="nav__link">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >About</a
-            >
+            <a href="#" class="nav__link--anchor 
+            link__hover-effect 
+            link__hover-effect--black
+        "
+            >About</a>
           </li>
           <li class="nav__link">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-            >
-              Projects</a
-            >
+            <a href="#" class="nav__link--anchor 
+            link__hover-effect 
+            link__hover-effect--black
+        "
+            >Projects</a>
           </li>
-          <li class="nav__link">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-            >
-              Contact</a
-            >
+          <li class="nav__link" onclick="toggleModal()">
+            <a href="#" class="
+            nav__link--anchor 
+            link__hover-effect 
+            link__hover-effect--black"
+            >Contact</a>
           </li>
-          <li class="nav__link click">
-            <a href="#" class="nav__link--anchor link__hover-effect">
+          <li class="nav__link click" onclick="toggleContrast()">
+            <a href="#" class="
+                nav__link--anchor 
+                link__hover-effect
+                link__hover-effect--black">
               <i class="fa-solid fa-circle-half-stroke"></i>
             </a>
           </li>
@@ -64,7 +65,7 @@
         <p class="header__para">
           I’m passionate about modern <b class="green">Frontend Development</b>,
           dedicated to building responsive web interfaces and seamless user
-          experiences. <br />Read more of my <b class="green">background.</b>
+          experiences. <br />Read more of my <b class="green click" onclick="toggleModal()">background.</b>
         </p>
         <div class="social__list">
           <a href="#" class="social__link click green">
@@ -78,7 +79,7 @@
           </a>
         </div>
       </header>
-      <button class="mail__btn click">
+      <button class="mail__btn click" onclick="toggleModal()">
         <i class="fa-solid fa-envelope"></i>
       </button>
       <a href="#projects" class="scroll">
@@ -120,13 +121,15 @@
           </div>
         </div>
         <div class="modal__half modal__contact">
+        <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
+
             <h3 class="modal__title modal__title--contact">
                 Let's Connect!
             </h3>
             <h3 class="modal__sub-title modal__sub-title--contact">
                 I'm currently open and excited for new opportunities!
             </h3>
-            <form id="contact__form" onsubmit="contact()">
+            <form id="contact__form" onsubmit="contact(event)">
                 <div class="form__item">
                     <label class="form__item--label">Name</label>
                     <input class="input" name="user_name" type="text" required></input>
@@ -150,7 +153,6 @@
                 Thanks for the message! Looking forward to speaking to you soon.
             </div>
         </div>
-        <i class="fa-solid fa-xmark modal__exit click"></i>
       </div>
     </section>
     <section id="projects">
