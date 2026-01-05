@@ -3,12 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dean McCall</title>
     <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/c9ca8b3d24.js"
       crossorigin="anonymous"
     ></script>
-    <title>Dean McCall</title>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("uAPy9xI5FIduex09c");
+   })();
+</script>
   </head>
   <body>
     <section id="landing-page">
@@ -18,27 +27,31 @@
         </figure>
         <ul class="nav__link--list">
           <li class="nav__link">
-            <a href="#" class="nav__link--anchor 
-            link__hover-effect 
-            link__hover-effect--black"
-            >About</a>
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >About</a
+            >
           </li>
           <li class="nav__link">
-            <a href="#" class="nav__link--anchor
-            link__hover-effect 
-            link__hover-effect--black">   
-            Projects</a>
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+            >
+              Projects</a
+            >
           </li>
           <li class="nav__link">
-            <a href="#" class="nav__link--anchor
-            link__hover-effect 
-            link__hover-effect--black">   
-            Contact</a>
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+            >
+              Contact</a
+            >
           </li>
           <li class="nav__link click">
-            <a href="#" class="nav__link--anchor 
-            link__hover-effect">
-             <i class="fa-solid fa-circle-half-stroke"></i>
+            <a href="#" class="nav__link--anchor link__hover-effect">
+              <i class="fa-solid fa-circle-half-stroke"></i>
             </a>
           </li>
         </ul>
@@ -51,7 +64,7 @@
         <p class="header__para">
           I’m passionate about modern <b class="green">Frontend Development</b>,
           dedicated to building responsive web interfaces and seamless user
-          experiences. <br />Read my full <b class="green">background.</b>
+          experiences. <br />Read more of my <b class="green">background.</b>
         </p>
         <div class="social__list">
           <a href="#" class="social__link click green">
@@ -71,8 +84,75 @@
       <a href="#projects" class="scroll">
         <div class="scroll__icon click"></div>
       </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">
+            A little bit about me.
+          </h3>
+          <h4 class="modal__sub-title modal__sub-title--about">
+            Frontend Software Engineer
+          </h4>
+          <p class="modal__para">
+            I’m a <b class="green">Frontend Software Engineer</b> and <b class="green">Army Veteran</b> with a strong
+            passion for developing resilient, responsive <b class="green">user experiences</b>.
+             <br>
+             I apply the rigorous standards of a former <b class="green">Electrical Foreman</b> to solve
+            complex problems, while remaining committed to mastering the <b class="green">latest
+            industry trends</b> to deliver innovative solutions.
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language">
+                <img class="modal__language--img" src="./assets/HTML5_Badge.svg.png" alt="">
+                <span class="language__name">HTML</span>
+            </figure>                
+            <figure class="modal__language">
+                <img class="modal__language--img" src="./assets/css-131-722685.webp" alt="">
+                <span class="language__name">CSS</span>
+            </figure>                
+            <figure class="modal__language">
+                <img class="modal__language--img" src="./assets/javascript-1-225993.webp" alt="">
+                <span class="language__name">JavaScript</span>
+            </figure>                
+            <figure class="modal__language">
+                <img class="modal__language--img" src="./assets/react-3-1175109.webp" alt="">
+                <span class="language__name">React</span>
+            </figure>                
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+            <h3 class="modal__title modal__title--contact">
+                Let's Connect!
+            </h3>
+            <h3 class="modal__sub-title modal__sub-title--contact">
+                I'm currently open and excited for new opportunities!
+            </h3>
+            <form id="contact__form" onsubmit="contact()">
+                <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                    <input class="input" name="user_name" type="text" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">E-mail</label>
+                    <input class="input" name="user_email" type="email" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea class="input" name="message" type="text" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">
+                    Send it my way!
+                </button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fa-solid fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for the message! Looking forward to speaking to you soon.
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark modal__exit click"></i>
+      </div>
     </section>
-
     <section id="projects">
       <div class="container">
         <div class="row">
@@ -181,27 +261,33 @@
       <div class="container">
         <div class="row footer__row">
           <figure>
-            <img class="footer__logo--img" src="./assets/mylogo no bg.png" alt="" />
+            <img
+              class="footer__logo--img"
+              src="./assets/mylogo no bg.png"
+              alt=""
+            />
           </figure>
           <div class="footer__social--list">
-            <a href="#"
-              class="link__hover-effect 
-              link__hover-effect--white
-              footer__social--link"
-            >GitHub</a>
-            <a href="#" class="link__hover-effect 
-            link__hover-effect--white 
-            footer__social--link"
-            >LinkedIn</a>
-            <a href="#"class="link__hover-effect 
-            link__hover-effect--white 
-            footer__social--link"
-            >Email</a>
-            <a href="#"
-              class="link__hover-effect 
-              link__hover-effect--white 
-              footer__social--link"
-            >Resume</a>
+            <a
+              href="#"
+              class="link__hover-effect link__hover-effect--white footer__social--link"
+              >GitHub</a
+            >
+            <a
+              href="#"
+              class="link__hover-effect link__hover-effect--white footer__social--link"
+              >LinkedIn</a
+            >
+            <a
+              href="#"
+              class="link__hover-effect link__hover-effect--white footer__social--link"
+              >Email</a
+            >
+            <a
+              href="#"
+              class="link__hover-effect link__hover-effect--white footer__social--link"
+              >Resume</a
+            >
           </div>
           <div class="footer__copyright green">&copy Dean McCall 2026</div>
         </div>
